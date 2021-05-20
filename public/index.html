@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>GPX</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="CHANGE ME">
+    <meta name="keywords" content="CHANGE ME">
+    <meta name="author" content="CHANGE ME">
+    <!-- Load jquery, bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <!-- Custom CSS End -->
+</head>
+<body>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            height:1px;
+        }
+    </style>
+    <td><a href="simple.gpx" download >simple.gpx</a></td>
+    <h3>GPX Parser</h3>
+    <h2 align = "center">File Log Panel </h2>
+    <div style="width:100%;height:120px;overflow:auto;">
+        <table id = "tables">
+            <tr>
+                
+            </tr>
+            <tbody>
+                <tr>
+                    
+                </tr>
+            </tbody>
+        </table> 
+    </div>
+    <label for="myDropdown">GPX Files:</label>
+    <select name="files" id="myDropdown">
+    </select>
+    <button class = "gpxfiles" type='submit'> View GPX Data </button>
+    <!--<div>
+        <div class = "gpxfiles">
+            <div id = "myDropdown" class = "dropdown-content">
+
+            </div>
+        </div>
+    </div>-->
+    <h2 align = "center">GPX View Panel </h2>
+    <div style="width:100%;height:110px;overflow:auto;">
+        <table id = table2>
+            <tr>
+                <th>Component</th>
+                <th>Name</th>
+                <th>NumberOfPoints</th>
+                <th>Length</th>
+                <th>Loop</th>
+            </tr>
+            <tr></tr>
+        </table> 
+    </div>
+    <select name="other" id="myDropdown2">
+    </select>
+    <button class = "otherData" type='submit'> View Other Data </button>
+    <!--<button type="button", class="otherData">Find Other Data</button>-->
+    <hr>
+    <div id="blah">I am blah</div>
+    <hr>
+    <h3>Create GPX File</h3>
+    <form ref='someform'
+          id='someform'>
+          <div class="form-group">
+                <label for="entryBox">Create GPX File</label>
+                <input type="text" class="form-control" id="entryBox" value="Value" placeholder="Placeholder">
+          </div>
+        <div class="form-group">
+            <a>Click button to create new GPX File</a>
+            <br> 
+            <input type='submit' class="btn btn-secondary">
+        </div>
+    </form>
+    <h3>Change Current Route or Track Name</h3>
+    <form ref='someform2'
+          id='someform2'>
+          <div class="form-group2">
+                <label for="entryBox1">Current Old Route or Track Name</label>
+                <input type="text" class="form-control" id="entryBox1" value="Value" placeholder="Placeholder">
+                
+          </div>
+          <div class ="form-group2">
+            <label for="entryBox2">New Route or Track Name</label>
+            <input type="text" class="form-control" id="entryBox2" value="Value" placeholder="Placeholder">
+          </div>
+          
+        
+        <div class="form-group2">
+            <a>Click button to change current Route or Track Name</a>
+            <br> 
+            <input type='submit' class="btn btn-secondar1y">
+        </div>
+        <br>
+    </form>
+    <h3>Add As Many Waypoints as you want for the new route, one by one</h3>
+    <form ref='someform3'
+          id='someform3'>
+          <div class="form-group3">
+                <label for="entryBox3">Latitude</label>
+                <input type="text" class="form-control" id="entryBox3" value="Value" placeholder="Placeholder">
+                
+          </div>
+          <div class ="form-group3">
+            <label for="entryBox4">Longitude</label>
+            <input type="text" class="form-control" id="entryBox4" value="Value" placeholder="Placeholder">
+          </div>
+        <div class="form-group3">
+            <a>Click button to add Latitude and longitude, as many as you want, one at a time</a>
+            <br> 
+            <input type='submit' class="btn btn-secondary2">
+        </div>
+        <br>
+    </form>
+    <h3>Add the Route</h3>
+    <form ref='someform4'
+          id='someform4'>
+          <div class="form-group4">
+                <label for="entryBox6">Route Name</label>
+                <input type="text" class="form-control" id="entryBox6" value="Value" placeholder="Placeholder">
+          </div>
+        
+        <div class="form-group4">
+            <a>Click button to Route with the previously added waypoints</a>
+            <br> 
+            <input type='submit' class="btn btn-secondary3">
+        </div>
+        <br>
+    </form>
+    <h3>Find Path Between</h3>
+    <form ref='someform5'
+          id='someform5'>
+          <div class="form-group5">
+                <label for="entryBox7">Latitude 1</label>
+                <input type="text" class="form-control" id="entryBox7" value="Value" placeholder="Placeholder">
+                
+          </div>
+          <div class ="form-group5">
+            <label for="entryBox8">Longitude 1</label>
+            <input type="text" class="form-control" id="entryBox8" value="Value" placeholder="Placeholder">
+          </div>
+
+          <div class="form-group5">
+            <label for="entryBox9">Latitude 2</label>
+            <input type="text" class="form-control" id="entryBox9" value="Value" placeholder="Placeholder">   
+        </div>
+        <div class ="form-group5">
+            <label for="entryBox10">Longitude 2</label>
+            <input type="text" class="form-control" id="entryBox10" value="Value" placeholder="Placeholder">
+        </div>
+        <div class ="form-group5">
+            <label for="entryBox11">Delta</label>
+            <input type="text" class="form-control" id="entryBox11" value="Value" placeholder="Placeholder">
+        </div>
+        <div class="form-group5">
+            <a>Click button to add the two points</a>
+            <br> 
+            <input type='submit' class="btn btn-secondary2">
+        </div>
+        <br>
+    </form>
+    <h3>Find Path Between Table</h3>
+    <div style="width:100%;height:110px;overflow:auto;">
+        <table id = table3>
+            <tr>
+                <th>Component</th>
+                <th>Name</th>
+                <th>NumberOfPoints</th>
+                <th>Length</th>
+                <th>Loop</th>
+            </tr>
+            <tr></tr>
+        </table> 
+    </div>
+    <form ref='uploadForm'
+		id='uploadForm'
+      action='/upload'
+      method='post'
+      encType="multipart/form-data">
+      <div class="form-group">
+      	<input type="file" name="uploadFile" class="btn btn-secondary">
+      	<input type='submit' value='Upload' class="btn btn-secondary">
+      </div>
+`   </form>
+    <h3>A4</h3>
+
+    <form ref='login'
+        id = 'login'>
+        <div class="id">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" id="username" value="Value" placeholder="Placeholder"> 
+        </div>
+        <div class="id">
+            <label for="databaseid">Database ID</label>
+            <input type="text" class="form-control" id="databaseid" value="Value" placeholder="Placeholder"> 
+        </div>
+        <div class="id">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" value="Value" placeholder="Placeholder"> 
+        </div>
+        <div class="id">    
+            <br> 
+            <input type='submit' class="btn btn-secondary11">
+        </div>
+    </form>
+
+    <button type = "button" id = 'deletetag' onclick ="deleteTable()">Delete Tables</button>
+    <button type = "button" id = 'create' onclick ="createtables()">Store All Files</button>
+    <button type = "button" id = 'displaystat' onclick ="displayDatabase()">Display DB Status</button>
+    <br>
+    <h3>All Queries Show up At The Very Bottom</h3>
+    <br>
+    <br>
+    <button type = "button" id = 'allroutesname' onclick ="displayAllRoutesName()">Display All Routes by Name</button>
+    <button type = "button" id = 'allroutes' onclick ="displayAllRoutes()">Display All Routes</button>
+    <button type = "button" id = 'allrouteslength' onclick ="displayAllRoutesLength()">Display All Routes by Length</button>
+    <br>
+    <br>
+    <br>
+    <label for="myDropdown3">GPX Files:</label>
+    <select name="allfiles" id="myDropdown3">
+    </select>
+    <br>
+    <button class = "gpxfiles2" id = "gpxfiles2" type='submit'> Select File to view routes </button>
+    <button class = "gpxfiles3" id = "gpxfiles3" type='submit'> Select to view routes sorted by name </button>
+    <button class = "gpxfiles4" id = "gpxfiles4" type='submit'> Select File to view routes sorted by length </button>
+    <br>
+    <br>
+    <br>
+    <form ref='point'
+        id = 'point'>
+        <div class="id">
+            <label for="route">RouteName To show Points for</label>
+            <input type="text" class="form-control" id="routename" value="Value" placeholder="Placeholder"> 
+        </div>
+        <div class="id">    
+            <br> 
+            <input type='submit' class="btn btn-second1">
+        </div>
+    </form>
+    <br>
+    <br>
+    <label for="myDropdown4">GPX Files:</label>
+    <select name="allfiles" id="myDropdown4">
+    </select>
+    <button class = "gpxfiles5" id = "gpxfiles5" type='submit'> Select File to view all points By Name </button>
+    <button class = "gpxfiles6" id = "gpxfiles6" type='submit'> Select File to view all points By Length </button>
+    <br>
+    <br>
+    <br>
+    <h3>Last One</h3>
+    <label for="myDropdown5">GPX Files:</label>
+    <select name="allfiles" id="myDropdown5">
+    </select>
+    <h3>Sort By Name</h3>
+    <form ref='lastonename'
+        id = 'lastonename'>
+        <div class="id">
+            <label for="N">N Amount of Points</label>
+            <input type="text" class="form-control" id="N" value="Value" placeholder="Placeholder"> 
+        </div>
+        <div class="id">
+            <label for="sl">shortest OR longest</label>
+            <input type="text" class="form-control" id="sl" value="Value" placeholder="Placeholder"> 
+        </div>
+        <div class="id">    
+            <br> 
+            <input type='submit' class="btn btn-second1">
+        </div>
+    </form>
+    <h3>Sort By Length</h3>
+    <form ref='lastonelength'
+        id = 'lastonelength'>
+        <div class="id">
+            <label for="N2">N Amount of Points</label>
+            <input type="text" class="form-control" id="N2" value="Value" placeholder="Placeholder"> 
+        </div>
+        <div class="id">
+            <label for="sl2">shortest OR longest</label>
+            <input type="text" class="form-control" id="sl2" value="Value" placeholder="Placeholder"> 
+        </div>
+        <div class="id">    
+            <br> 
+            <input type='submit' class="btn btn-secondary23">
+        </div>
+    </form>
+    <h3>Query</h3>
+    <div style="width:100%;height:120px;overflow:auto;">
+        <table id = "dbtable">
+            <tr>
+            </tr>
+            <tbody>
+                <tr>
+                    
+                </tr>
+            </tbody>
+        </table> 
+    </div>
+    <br>
+    <br>
+    
+    <!-- Leave me at the bottom of body -->
+    <script src="/index.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
